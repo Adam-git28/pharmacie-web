@@ -1,0 +1,47 @@
+<!-- templates/factures.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Factures générées</title>
+</head>
+<body>
+    <h1>Liste des factures générées</h1>
+    {% if factures %}
+        <ul>
+        {% for f in factures %}
+            <li><a href="/facture/{{ f }}" target="_blank">{{ f }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune facture disponible.</p>
+    {% endif %}
+    <p><a href="/">Retour</a></p>
+</body>
+</html>
+
+
+
+<!-- templates/ajout_client.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un client</title>
+</head>
+<body>
+    <h1>Ajouter un nouveau client</h1>
+    <form method="post">
+        <label>Nom :</label>
+        <input type="text" name="nom" required><br>
+        <label>Prénom :</label>
+        <input type="text" name="prenom" required><br>
+        <label>Téléphone :</label>
+        <input type="text" name="telephone" required><br>
+        <label>Email :</label>
+        <input type="email" name="email" required><br>
+        <button type="submit">Ajouter</button>
+    </form>
+    <p><a href="/">Retour</a></p>
+</body>
+</html>
