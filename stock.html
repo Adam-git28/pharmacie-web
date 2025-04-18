@@ -1,0 +1,28 @@
+<!-- templates/stock.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock</title>
+</head>
+<body>
+    <h1>Stock actuel</h1>
+    <table border="1">
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Stock Initial</th>
+        </tr>
+        {% for nom, infos in stock.items() %}
+        <tr>
+            <td>{{ nom }}</td>
+            <td>{{ infos.prix }}</td>
+            <td>{{ infos.quantite }}</td>
+            <td>{{ infos.stock_initial }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/">Retour</a></p>
+</body>
+</html>
